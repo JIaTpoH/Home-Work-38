@@ -68,7 +68,6 @@ public class Pet {
     return new Pet(kind, name, birthDate, weight);
   }
 
-  @Override
   public String toString() {
     String str = "Pet: kind=" + kind + ", name='" + name + "'";
     if (kind == Kind.CAT) {
