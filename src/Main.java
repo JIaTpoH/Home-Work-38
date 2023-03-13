@@ -8,22 +8,23 @@ public class Main {
 
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+try {
 
-    // Read the number of pets
-    int n = Integer.parseInt(reader.readLine());
+  int n = Integer.parseInt(reader.readLine());
 
-    // Read the pets
-    List<Pet> pets = new ArrayList<>();
-    for (int i = 0; i < n; i++) {
-      String input = reader.readLine();
-      pets.add(Pet.fromString(input));
-    }
+  List<Pet> pets = new ArrayList<>();
+  for (int i = 0; i < n; i++) {
+    String input = reader.readLine();
+    pets.add(Pet.fromString(input));
+  }
 
-    // Print the pets
-    for (Pet pet : pets) {
-      System.out.println(pet);
-    }
+  for (Pet pet : pets) {
+    System.out.println(pet);
+  }
 
-    reader.close();
+  reader.close();
+} catch (NumberFormatException e)  {
+  System.out.println("Wrong number format: " + e.getMessage());
+}
   }
 }
